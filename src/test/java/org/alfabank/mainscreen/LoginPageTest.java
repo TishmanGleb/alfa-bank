@@ -17,6 +17,7 @@ public class LoginPageTest extends AbstractTest {
     private static final String PASSWORD = "Password";
     private static final String TITLE_TEXT = "Вход в Alfa-Test выполнен";
     private static final String ERROR_MESSAGE = "Введены неверные данные";
+    private static final int INPUT_MAX_LENGTH = 50;
 
     @Test(description = "Check login with valid credentials")
     public void loginWithValidCredentialsTest() {
@@ -45,7 +46,7 @@ public class LoginPageTest extends AbstractTest {
         String userName = generateRandomString(60);
         loginPage.setUsername(userName);
         int actualUsernameInputValueLength = loginPage.getUsernameInputValue().length();
-        Assert.assertEquals(actualUsernameInputValueLength, 50);
+        Assert.assertEquals(actualUsernameInputValueLength, INPUT_MAX_LENGTH);
     }
 
     @Test(description = "Check password input max value")
@@ -53,7 +54,7 @@ public class LoginPageTest extends AbstractTest {
         String password = generateRandomString(60);
         loginPage.setPassword(password);
         int actualPasswordInputValueLength = loginPage.getPasswordInputValue().length();
-        Assert.assertEquals(actualPasswordInputValueLength, 50);
+        Assert.assertEquals(actualPasswordInputValueLength, INPUT_MAX_LENGTH);
     }
 
     @Test(description = "Check username input allowed character set")
