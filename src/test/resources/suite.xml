@@ -1,0 +1,10 @@
+<suite name="Suite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="Test">
+        <classes>
+            <class name="org.alfabank.mainscreen.LoginPageTest"/>
+        </classes>
+    </test>
+</suite>
